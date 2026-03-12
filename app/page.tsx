@@ -1,65 +1,105 @@
 import Image from "next/image";
+import { Montserrat } from "next/font/google";
+import { HiBadgeCheck } from "react-icons/hi";
+import { BiTestTube } from "react-icons/bi";
+import { FaShippingFast } from "react-icons/fa";
+import heroPack from "@/public/heroPackk.png";
+import OnScroll from "./components/OnScroll";
 
-export default function Home() {
+const montserrat = Montserrat({
+  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
+  style: ["normal", "italic"],
+  subsets: ["latin"],
+});
+
+export default async function Home() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+    <main
+      className={`${montserrat.className} ${montserrat.style} z-1 mt-18.25 md:mt-20 text-white w-full h-full flex flex-col max-w-5xl mx-auto p-2.5`}
+    >
+      <div className="relative grid w-fit h-fit grid-cols-1 md:grid-cols-2 items-center backdrop-blur-lg mb-10 gap-5">
+        <OnScroll>
+          <div className="w-fit h-full flex flex-col text-center md:text-left">
+            <p className="text-[10px] sm:text-[10px] md:text-xs lg:text-sm font-semibold italic text-white/80 uppercase tracking-wide">
+              Science-Backed Nutrition for Serious Results
+            </p>
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold uppercase mb-2.5">
+              Fuel Your Strength.{" "}
+              <span className="text-green-400 animate-pulse drop-shadow-2xl drop-shadow-green-400/90">
+                Build Your Future.
+              </span>
+            </h1>
+            <p className="text-[10px] sm:text-[10px] md:text-xs lg:text-sm font-medium text-white/70 capitalize tracking-wide ">
+              Premium supplements designed for
+              <span className="italic text-green-400">
+                {" "}
+                muscle growth, fat loss, and peak performance.
+              </span>
+            </p>
+            <div className="w-full h-fit flex flex-row flex-nowrap justify-center md:justify-start items-center gap-2 mt-2">
+              <button className="w-fit h-fit font-medium uppercase text-base text-black bg-white rounded-lg px-3 py-2 cursor-pointer">
+                View product
+              </button>
+              <button className="w-fit h-fit font-medium uppercase text-base text-white bg-green-400 rounded-lg px-3 py-2 cursor-pointer">
+                get a goal
+              </button>
+            </div>
+          </div>
+        </OnScroll>
+        <OnScroll>
+          <div className="w-full h-full relative drop-shadow-xl drop-shadow-black">
+            <div className="absolute left-1/2 top-1/2 z-[-1] -translate-1/2 bg-transparent w-xs h-10 backdrop-blur-2xl shadow-green-400 shadow-[0px_0px_470px_40px]"></div>
             <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
+              src={heroPack}
+              alt="HeroPackPng"
+              className="w-full h-full max-w-lg justify-self-center z-10 md:absolute md:top-1/2 md:left-1/2 md:-translate-x-1/2 md:-translate-y-1/2"
+              placeholder="blur"
             />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
+          </div>
+        </OnScroll>
+      </div>{" "}
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-2.5">
+        <OnScroll>
+          <div className="w-full h-full text-center flex flex-col items-center justify-center gap-1 bg-white/10 rounded-md p-5 drop-shadow-violet-200 backdrop-blur-lg">
+            <h2 className="text-xl font-bold text-white flex flex-row flex-nowrap items-center gap-1">
+              <HiBadgeCheck size={25} color="white" />
+              Guarantee
+            </h2>
+            <p className="text-sm">
+              Your performance matters to us. If you're not completely satisfied
+              with your purchase, we offer a hassle-free money-back guarantee.
+            </p>
+          </div>
+        </OnScroll>
+        <OnScroll>
+          <div className="w-full h-full text-center flex flex-col items-center justify-center gap-1 bg-white/10 rounded-md p-5 drop-shadow-violet-200 backdrop-blur-lg">
+            <h2 className="text-xl font-bold text-white flex flex-row flex-nowrap items-center gap-1">
+              {" "}
+              <BiTestTube size={25} color="white" />
+              Lab Tested
+            </h2>
+            <p className="text-sm">
+              Every product we offer is independently tested in certified
+              laboratories to ensure purity, potency, and safety.Train hard —
+              we've got your back.
+            </p>
+          </div>
+        </OnScroll>
+        <OnScroll>
+          <div className="w-full h-full text-center flex flex-col items-center justify-center gap-1 bg-white/10 rounded-md p-5 drop-shadow-violet-200 backdrop-blur-lg">
+            <h2 className="text-xl font-bold text-white flex flex-row flex-nowrap items-center gap-1">
+              {" "}
+              <FaShippingFast size={25} color="white" />
+              Free Shipping
+            </h2>
+            <p className="text-sm">
+              Fuel your progress without extra costs. Enjoy fast and secure
+              delivery on all orders over $50 — because investing in your health
+              shouldn't come with hidden fees
+            </p>
+          </div>
+        </OnScroll>
+      </div>
+    </main>
   );
 }
