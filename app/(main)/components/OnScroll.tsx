@@ -15,9 +15,9 @@ export default function OnScroll({ children }: { children: React.ReactNode }) {
   }, [isInView]);
 
   return (
-    <div ref={ref} className="w-full h-full">
+    <div ref={ref} className="w-full h-full bg-transparent">
       <motion.div
-        className="w-full h-full"
+        className="w-full h-full bg-transparent"
         variants={{
           hidden: { opacity: 0, y: 100 },
           visible: { opacity: 1, y: 0 },

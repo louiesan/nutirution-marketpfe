@@ -105,10 +105,10 @@ export default function NavBar() {
                 </Link>
               ) : (
                 <Link
-                  href={"/"}
+                  href={"/sign-up"}
                   className="w-fit px-2.5 py-1.5 rounded-md bg-green-400 text-white font-semibold"
                 >
-                  Sign In
+                  Sign Up
                 </Link>
               )}
             </li>

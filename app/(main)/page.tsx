@@ -1,10 +1,10 @@
 import Image from "next/image";
-import { Montserrat } from "next/font/google";
 import { HiBadgeCheck } from "react-icons/hi";
 import { BiTestTube } from "react-icons/bi";
 import { FaShippingFast } from "react-icons/fa";
 import heroPack from "@/public/heroPackk.png";
 import OnScroll from "./components/OnScroll";
+import { Montserrat } from "next/font/google";
 
 const montserrat = Montserrat({
   weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
@@ -17,7 +17,7 @@ export default async function Home() {
     <main
       className={`${montserrat.className} ${montserrat.style} z-1 mt-18.25 md:mt-20 text-white w-full h-full flex flex-col max-w-5xl mx-auto p-2.5`}
     >
-      <div className="relative grid w-fit h-fit grid-cols-1 md:grid-cols-2 items-center backdrop-blur-lg mb-10 gap-5">
+      <div className="relative grid w-fit h-fit grid-cols-1 md:grid-cols-2 items-center mb-10 gap-5">
         <OnScroll>
           <div className="w-fit h-full flex flex-col text-center md:text-left">
             <p className="text-[10px] sm:text-[10px] md:text-xs lg:text-sm font-semibold italic text-white/80 uppercase tracking-wide">
@@ -25,7 +25,7 @@ export default async function Home() {
             </p>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold uppercase mb-2.5">
               Fuel Your Strength.{" "}
-              <span className="text-green-400 animate-pulse drop-shadow-2xl drop-shadow-green-400/90">
+              <span className="text-green-400 drop-shadow-[0_0_15px] drop-shadow-[rgba(34,197,94,0.8)]">
                 Build Your Future.
               </span>
             </h1>
@@ -60,7 +60,7 @@ export default async function Home() {
       </div>{" "}
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-2.5">
         <OnScroll>
-          <div className="w-full h-full text-center flex flex-col items-center justify-center gap-1 bg-white/10 rounded-md p-5 drop-shadow-violet-200 backdrop-blur-lg">
+          <div className="w-full h-full text-center flex flex-col items-center justify-center gap-1 bg-white/10 rounded-md p-5 drop-shadow-sm drop-shadow-green-200 backdrop-blur-lg">
             <h2 className="text-xl font-bold text-white flex flex-row flex-nowrap items-center gap-1">
               <HiBadgeCheck size={25} color="white" />
               Guarantee
@@ -72,7 +72,7 @@ export default async function Home() {
           </div>
         </OnScroll>
         <OnScroll>
-          <div className="w-full h-full text-center flex flex-col items-center justify-center gap-1 bg-white/10 rounded-md p-5 drop-shadow-violet-200 backdrop-blur-lg">
+          <div className="w-full h-full text-center flex flex-col items-center justify-center gap-1 bg-white/10 rounded-md p-5 drop-shadow-sm drop-shadow-green-200 backdrop-blur-lg">
             <h2 className="text-xl font-bold text-white flex flex-row flex-nowrap items-center gap-1">
               {" "}
               <BiTestTube size={25} color="white" />
@@ -86,7 +86,7 @@ export default async function Home() {
           </div>
         </OnScroll>
         <OnScroll>
-          <div className="w-full h-full text-center flex flex-col items-center justify-center gap-1 bg-white/10 rounded-md p-5 drop-shadow-violet-200 backdrop-blur-lg">
+          <div className="w-full h-full text-center flex flex-col items-center justify-center gap-1 bg-white/10 rounded-md p-5 drop-shadow-sm drop-shadow-green-200 backdrop-blur-lg">
             <h2 className="text-xl font-bold text-white flex flex-row flex-nowrap items-center gap-1">
               {" "}
               <FaShippingFast size={25} color="white" />

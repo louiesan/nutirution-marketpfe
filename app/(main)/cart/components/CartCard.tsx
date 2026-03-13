@@ -16,7 +16,7 @@ export default function CartCard({ cart }: { cart: item }) {
   const dispatch = useAppDispatch();
   const [quantityNum, setQuantityNum] = useState<number>(1);
   return (
-    <div className="w-full h-fit grid grid-cols-[150px_1fr] bg-[#1a1a1afa] items-center rounded-lg">
+    <div className="w-full h-fit grid grid-cols-[150px_1fr]  bg-white/5 border border-white/10 rounded-md p-2.5">
       <Image
         src={imaging}
         alt={`${cart.name}_png`}
@@ -32,7 +32,7 @@ export default function CartCard({ cart }: { cart: item }) {
         <h4 className="text-white font-medium text-lg">Price: {cart.price}$</h4>
         <div className="w-fit h-fit flex flex-row items-center justify-center gap-1.5">
           <button
-            className="text-white"
+            className="text-white w-8 h-8 cursor-pointer hover:opacity-80  bg-white/5 border border-white/10 rounded-sm"
             onClick={() =>
               dispatch(
                 decrementQuantity({ id: cart.id, quantities: quantityNum }),
@@ -50,7 +50,7 @@ export default function CartCard({ cart }: { cart: item }) {
             placeholder="1"
           />
           <button
-            className="text-white"
+            className="text-white w-8 h-8 cursor-pointer hover:opacity-80 bg-white/5 border border-white/10 rounded-sm"
             onClick={() =>
               dispatch(addToCart({ item: cart, quantities: quantityNum }))
             }
@@ -64,7 +64,7 @@ export default function CartCard({ cart }: { cart: item }) {
       </div>
       <div className="w-full h-full py-1.5 px-1.5 col-span-2">
         <button
-          className="w-full h-full py-1.5 rounded-md bg-[#444444] justify-center items-center cursor-pointer flex flex-row text-xl font-semibold text-gray-500 hover:text-red-400 hover:bg-[#121212] transition-all duration-500 ease-in"
+          className="w-full h-full py-1.5 rounded-md bg-transparent border border-white/10 justify-center items-center cursor-pointer flex flex-row text-xl font-semibold text-gray-500 hover:text-red-400 hover:bg-green-100 transition-all duration-300 ease-in"
           onClick={() => dispatch(removeElement(cart))}
         >
           Remove <Trash2Icon />

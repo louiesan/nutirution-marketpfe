@@ -1,6 +1,9 @@
 export const AboutForm = () => {
   return (
-    <form action="" className="w-full h-full  p-2.5 ">
+    <form
+      action=""
+      className="w-full h-full  p-6 bg-white/5 backdrop-blur-md border border-white/10 rounded-xl hover:border-green-400/40 transition"
+    >
       <label
         className=" text-white text-lg font-medium capitalize "
         htmlFor="fullname"

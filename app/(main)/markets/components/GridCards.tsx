@@ -22,7 +22,7 @@ import Cards from "./Cards";
 export default function GridCards({ products }: { products: products }) {
   return (
     <div
-      className={`w-full h-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 my-1.5 gap-2.5`}
+      className={`w-full h-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 my-1.5 gap-2.5`}
     >
       {products && products.length > 0 ? (
         products.map((e) => <Cards key={e.id} product={e} />)

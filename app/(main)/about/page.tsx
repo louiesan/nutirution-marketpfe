@@ -1,55 +1,61 @@
 import AboutImage from "@/public/aboutheropage.webp";
 import Image from "next/image";
-import { Montserrat } from "next/font/google";
 import { ScrollCircle, ScrollLine, ShowCards } from "../components/AboutPrgrs";
 import OnScroll from "../components/OnScroll";
 import { AboutForm } from "./component/AboutForm";
 
-const montserrat = Montserrat({
-  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
+import { Rubik } from "next/font/google";
+
+const rubik = Rubik({
+  weight: ["300", "400", "500", "600", "700", "800", "900"],
   style: ["normal", "italic"],
   subsets: ["latin"],
 });
+
 export default function About() {
   return (
     <main
-      className={`mt-18.25 max-w-6xl mx-auto px-2.5 ${montserrat.className} ${montserrat.style} z-1 text-white w-full h-full flex flex-col `}
+      className={`mt-20 max-w-5xl mx-auto px-3 ${rubik.className} text-white flex flex-col`}
     >
       <OnScroll>
-        <div className="w-full h-fit grid grid-cols-1 md:grid-cols-2 my-1.5 gap-2.5 items-center justify-center mb-10">
-          <div className="w-full h-fit">
-            <h1 className="text-white text-2xl text-center md:text-left md:text-3xl lg:text-4xl uppercase font-semibold mb-5">
-              Built For Athletes. Designed For Results.
+        <section className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center py-16">
+          <div>
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold uppercase mb-4">
+              Built For Athletes
+              <span className="block text-green-400">Designed For Results</span>
             </h1>
-            <p className="text-white/80 text-sm md:text-base lg:text-lg font-medium">
+
+            <p className="text-white/80 text-base md:text-lg leading-relaxed">
               NutritioN was created to simplify supplement choices and eliminate
               confusion. We provide goal-oriented stacks, lab-tested products,
               and transparent information so you can focus on training — not
               guessing.
             </p>
           </div>
-          <div className="w-full h-fit">
+
+          <div>
             <Image
-              className="w-full outline-2 outline-green-500/80 rounded-md drop-shadow-lg drop-shadow-green-600/89"
               src={AboutImage}
-              alt="aboutheroimg"
+              alt="about hero"
+              className="rounded-xl border border-white/10 shadow-lg shadow-green-500/20"
             />
           </div>
-        </div>
+        </section>
       </OnScroll>
+
       <ShowCards>
-        <div className="w-full h-screen max-h-screen place-content-center content-center my-10 drop-shadow-sm drop-shadow-white/90">
-          <h1 className="text-4xl md:text-6xl font-bold text-white col-span-3 my-2.5 text-center ">
-            OUR STORY
-          </h1>
-          <p className="text-white/80 text-sm sm:text-base md:text-lg text-center">
+        <section className="text-center py-20 border-t border-white/10">
+          <h1 className="text-4xl md:text-5xl font-bold mb-6">OUR STORY</h1>
+
+          <p className="max-w-2xl mx-auto text-white/70 text-base md:text-lg">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi alias
             numquam autem cupiditate. Eum, fuga officia beatae in exercitationem
             nesciunt provident, laudantium nam veniam dignissimos inventore
             tenetur quam, velit quaerat!
           </p>
-        </div>
+        </section>
       </ShowCards>
+
       <div className="block">
         <div className="w-full h-full block sm:grid items-center justify-center sm:grid-cols-[1fr_50px_1fr] relative my-80 sm:my-0">
           <ShowCards>
@@ -121,76 +127,82 @@ export default function About() {
           <div></div>
         </div>
       </div>
-      <div className="w-full h-fit my-5 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-2.5 drop-shadow-sm drop-shadow-white/20">
-        <h1 className="text-4xl font-semibold text-white my-5 uppercase text-center sm:col-span-2 md:col-span-3">
-          Our Approach:
+
+      <section className="py-20 border-t border-white/10">
+        <h1 className="text-4xl font-semibold text-center mb-10">
+          Our Approach
         </h1>
-        <div className="w-full h-45 flex flex-col items-center justify-center gap-1.5 p-2.5 rounded-md bg-white/10 outline-2 backdrop-blur-md outline-white/40 drop-shadow-sm drop-shadow-white/80 z-11 relative hover:-translate-y-5 transition-all ease-in-out duration-300 ">
-          <h1 className="text-2xl md:text-xl lg:text-2xl my-2.5 font-semibold text-white uppercase text-center">
-            🧧 50+ Products
-          </h1>
-          <p className="text-sm my-1 text-white/80 font-medium text-center">
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Harum vero
-            aliquam tempore ducimus perferendis.
-          </p>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+          <div className="p-6 text-center bg-white/5 backdrop-blur-md border border-white/10 rounded-xl hover:border-green-400/40 transition">
+            <h2 className="text-2xl font-semibold mb-2">🧧 50+ Products</h2>
+            <p className="text-white/70">
+              Carefully selected supplements designed for performance and
+              recovery.
+            </p>
+          </div>
+
+          <div className="p-6 text-center bg-white/5 backdrop-blur-md border border-white/10 rounded-xl hover:border-green-400/40 transition">
+            <h2 className="text-2xl font-semibold mb-2">🎯 5 Goal Programs</h2>
+            <p className="text-white/70">
+              Structured supplement stacks tailored to specific fitness goals.
+            </p>
+          </div>
+
+          <div className="p-6 text-center bg-white/5 backdrop-blur-md border border-white/10 rounded-xl hover:border-green-400/40 transition">
+            <h2 className="text-2xl font-semibold mb-2">💪 1000+ Athletes</h2>
+            <p className="text-white/70">
+              A growing community of athletes achieving better results.
+            </p>
+          </div>
         </div>
-        <div className="w-full h-45 flex flex-col items-center justify-center gap-1.5 p-2.5 rounded-md bg-white/10 outline-2 backdrop-blur-md outline-white/40 drop-shadow-sm drop-shadow-white/80 z-11 relative hover:-translate-y-5 transition-all ease-in-out duration-300 ">
-          <h1 className="text-2xl md:text-xl lg:text-2xl my-2.5 font-semibold text-white uppercase text-center">
-            🎯 5 Goal Programs
-          </h1>
-          <p className="text-sm my-1 text-white/80 font-medium text-center">
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Harum vero
-            aliquam tempore ducimus perferendis.
-          </p>
-        </div>
-        <div className="w-full h-45 flex flex-col items-center justify-center gap-1.5 p-2.5 rounded-md bg-white/10 outline-2 backdrop-blur-md outline-white/40 drop-shadow-sm drop-shadow-white/80 z-11 relative hover:-translate-y-5 transition-all ease-in-out duration-300 ">
-          <h1 className="text-2xl md:text-xl lg:text-2xl my-2.5 font-semibold text-white uppercase text-center">
-            🧑🏽‍💼 1000+ Satisfied
-          </h1>
-          <p className="text-sm my-1 text-white/80 font-medium text-center">
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Harum vero
-            aliquam tempore ducimus perferendis.
-          </p>
-        </div>
-      </div>
-      <OnScroll>
-        <h2 className="text-white uppercase font-semibold text-center text-6xl mt-16">
-          CONTACT US
-        </h2>
-      </OnScroll>
-      <OnScroll>
-        <div className="w-full h-full grid grid-cols-1 md:grid-cols-2 items-center justify-center mt-20">
-          <div className="w-full h-full">
+      </section>
+
+      {/* CONTACT */}
+      <section className="py-20 border-t border-white/10">
+        <OnScroll>
+          <h2 className="text-center text-4xl md:text-5xl font-bold mb-12">
+            CONTACT US
+          </h2>
+        </OnScroll>
+
+        <OnScroll>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             <AboutForm />
-          </div>
-          <div className="w-full h-full flex flex-col p-2.5 justify-evenly">
-            <div>
-              <h2 className="text-white uppercase font-semibold text-4xl mb-2.5">
-                Anything in mind?
-              </h2>
-              <p className="text-white/80 font-medium text-xl p-1.5">
-                Have anything in mind don't ever hesitate to contact Us, We will
-                respond at you at maximum.
-              </p>
+
+            <div className="space-y-8 p-6 text-center bg-white/5 backdrop-blur-md border border-white/10 rounded-xl hover:border-green-400/40 transition">
+              <div>
+                <h2 className="text-xl sm:text-3xl font-semibold mb-3">
+                  Anything in mind?
+                </h2>
+
+                <p className="text-white/70 text-base sm:text-lg">
+                  If you have any questions about supplements, stacks, or
+                  training support — feel free to contact us anytime.
+                </p>
+              </div>
+
+              <div className="space-y-3">
+                <span className="text-green-400 text-sm uppercase tracking-wide">
+                  Join our newsletter
+                </span>
+
+                <form className="flex flex-wrap sm:flex-nowrap gap-2 mt-1">
+                  <input
+                    type="email"
+                    placeholder="your@email.com"
+                    className="flex-1 px-3 py-2 rounded-lg bg-white text-black"
+                  />
+
+                  <button className="px-4 py-2 flex-1 sm:flex-0 rounded-lg bg-green-400 text-black font-medium hover:bg-green-300 transition">
+                    Subscribe
+                  </button>
+                </form>
+              </div>
             </div>
-            <div className="w-full h-fit flex flex-col items-center justify-center gap-2.5">
-              <span className="text-green-200/80 drop-shadow-green-100 drop-shadow-xs text-lg font-normal">
-                you can also become a newsettler:
-              </span>
-              <form className="w-full h-fit flex flex-row items-center relative">
-                <input
-                  type="text"
-                  placeholder="blingadonag@example.com"
-                  className="w-full h-fit px-2.5 py-1.5 rounded-xs bg-white text-black/80 text-normal"
-                />
-                <button className="absolute top-1/2 -translate-y-1/2 right-0 w-fit h-fit px-1.5 py-1 rounded-xs outline outline-white/80 text-white bg-black cursor-pointer">
-                  registre
-                </button>
-              </form>
-            </div>
           </div>
-        </div>
-      </OnScroll>
+        </OnScroll>
+      </section>
     </main>
   );
 }
